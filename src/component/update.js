@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const Update = () => {
   const { id } = useParams();
@@ -27,7 +27,7 @@ const Update = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
-      .post(`https://employee-mern-api-tau.vercel.app/update/${id}`, {
+      .post(`http://localhost:8080/update/${id}`, {
         name,
         email,
         age,
@@ -86,7 +86,12 @@ const Update = () => {
                 value={city}
               />
             </div>
-            <button className="btn btn-success w-100">Update</button>
+            <Link to={`/update/${id}`} className="btn btn-success w-100 mt-2">
+              Update
+            </Link>
+            <Link to="/home" className="btn btn-primary w-100 mt-2">
+              Home
+            </Link>
           </form>
         </div>
       </div>
