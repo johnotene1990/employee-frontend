@@ -7,28 +7,33 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
         if (!email || !password) {
-            alert('Please fill in both email and password fields.');
-            return;
+        alert('Please fill in both email and password fields.');
+        return;
         }
-
-        axios.post('https://employee-frontend-ksjs.onrender.com/login', { email, password })
-            .then(result => {
-                console.log('Server response:', result.data);
-                if (result.data === 'success') {
-                    navigate('/home');
-                } else {
-                    alert('Invalid credentials. Please try again.');
-                }
-            })
-            .catch(err => {
-                console.error('Login error:', err);
-                alert('An error occurred during login. Please try again later.');
-            });
-    };
+        
+        console.log('Email:', email);
+        console.log('Password:', password);
+        
+        axios.post('http://localhost:8080/login', { email, password })
+        .then(result => {
+        console.log('Server response:', result.data);
+        if (result.data.status === 'success') {
+        navigate('/home');
+        } else {
+        alert('Invalid credentials. Please try again.');
+        }
+        })
+        .catch(err => {
+        console.error('Login error:', err);
+        alert('An error occurred during login. Please try again later.');
+        });
+        };
 
     return (
         <div className="d-flex vh-100 justify-content-center align-items-center bg-primary">
@@ -68,5 +73,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
