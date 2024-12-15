@@ -20,7 +20,7 @@ const Login = () => {
         console.log('Email:', email);
         console.log('Password:', password);
         
-        axios.post('https://employee-backend-74vw.onrender.com//login', { email, password })
+        axios.post('https://employee-backend-74vw.onrender.com/login', { email, password })
         .then(result => {
         console.log('Server response:', result.data);
         if (result.data.status === 'success') {
