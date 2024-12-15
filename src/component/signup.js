@@ -15,7 +15,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8080/register',
+        'https://employee-backend-74vw.onrender.com//register',
         { name, email, age, city, password }
       );
       console.log(response.data); // Ensure backend confirms data is saved
