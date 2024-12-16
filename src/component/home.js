@@ -10,7 +10,7 @@ export default function Home() {
     // ])
 
      useEffect(()=> {
-      //   axios.get('https://employee-mern-api-tau.vercel.app/')
+      //   axios.get('https://employee-backend-74vw.onrender.com/home')
       axios.get('/home')
         //.then(res=>console.log(res))
          .then(res => setUser(res.data))
@@ -19,7 +19,7 @@ export default function Home() {
      },[])
 
      const handleDelete = (id)=>{
-         // axios.delete('https://employee-mern-api-tau.vercel.app/delete/'+id)
+         // axios.delete('https://employee-backend-74vw.onrender.com/delete/'+id)
          axios.delete('/delete/'+id)
          .then(result=>{
             console.log(result)
