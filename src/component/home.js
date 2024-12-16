@@ -20,7 +20,7 @@ export default function Home() {
 
      const handleDelete = (id)=>{
          // axios.delete('https://employee-backend-74vw.onrender.com/delete/'+id)
-         axios.delete('https://employee-backend-74vw.onrender.com/delete/'+id)
+         axios.delete('delete/'+id)
          .then(result=>{
             console.log(result)
             window.location.reload()
