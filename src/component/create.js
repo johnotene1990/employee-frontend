@@ -13,7 +13,7 @@ const Create = () => {
 
     const handleSubmit = ((e) => {
         e.preventDefault();
-        axios.post("/localhost:8080/create", { name, email, age, city, password })
+        axios.post("/https://employee-backend-74vw.onrender.com/create", { name, email, age, city, password })
             //axios.post('/create', {name,email,age,city,password})
             .then(res => {
                 console.log(res)
