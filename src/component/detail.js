@@ -12,7 +12,7 @@ const Detail = () => {
 
   useEffect(() => {
     axios
-      .get(`https://employee-mern-api-tau.vercel.app/getuser/${id}`)
+      .get(`https://employee-backend-74vw.onrender.com/getuser/${id}`)
       .then((result) => {
         console.log(result);
         setName(result.data.name);
